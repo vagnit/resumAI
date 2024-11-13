@@ -14,7 +14,7 @@ job_listings = job_listings.replace([np.nan, np.inf, -np.inf], None)
 
 client = DataAPIClient(os.environ["ASTRA_DB_APPLICATION_TOKEN"])
 database = client.get_database(os.environ["ASTRA_DB_API_ENDPOINT"])
-collection = database.get_collection("listings")
+collection = database.get_collection("job_listings")
 
 def truncate_content(content, max_bytes=8000):
     # Encode the string into bytes (UTF-8 encoding)
