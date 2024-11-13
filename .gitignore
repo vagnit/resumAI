@@ -1,5 +1,6 @@
 # Ignore venv
 venv/
+resum_ai/venv/
 
 # Ignore environment variables
 .env 
