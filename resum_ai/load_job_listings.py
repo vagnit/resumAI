@@ -4,22 +4,17 @@ import pandas as pd
 import os
 from datetime import datetime
 import numpy as np
+from datasets import load_dataset
 
 load_dotenv()
 
-script_dir = os.path.dirname(__file__)  # Directory of the script
-csv_file_path = os.path.join(script_dir, 'postings.csv')
-
-job_listings = pd.read_csv(csv_file_path)
+dataset = load_dataset("datastax/linkedin_job_listings", split='train')
+job_listings = pd.DataFrame.from_dict(dataset)
 job_listings = job_listings.replace([np.nan, np.inf, -np.inf], None)
 
 client = DataAPIClient(os.environ["ASTRA_DB_APPLICATION_TOKEN"])
 database = client.get_database(os.environ["ASTRA_DB_API_ENDPOINT"])
-collection = database.get_collection("job_listings")
-
-# print headers
-# for listing in job_listings:
-#     print(listing)
+collection = database.get_collection("listings")
 
 def truncate_content(content, max_bytes=8000):
     # Encode the string into bytes (UTF-8 encoding)
