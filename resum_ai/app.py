@@ -16,14 +16,13 @@ current_dir = os.path.dirname(__file__)
 # Construct the file path
 resume_image = os.path.join(current_dir, 'resume.png')
 
-
 # Title of the app
 # Center the title, header, image, and input form
 st.markdown("<h1 style='text-align: center;'>ResumAI</h1>", unsafe_allow_html=True)
 
 st.markdown("<h2 style='text-align: center;'>Optimize your job searching with ResumAI</h2>", unsafe_allow_html=True)
 
-st.image("resume_image", width=650, use_container_width='auto')
+st.image(resume_image, width=650, use_container_width='auto')
 
 # Center the input form
 desired_role = st.text_input("Desired Role:", key="desired_role", help="Enter the job role you are looking for.")
