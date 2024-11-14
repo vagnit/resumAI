@@ -10,6 +10,15 @@ openai_api_key = st.secrets["OPENAI_API_KEY"]
 astra_db_token = st.secrets["ASTRA_DB_APPLICATION_TOKEN"]
 astra_endpoint = st.secrets["ASTRA_DB_API_ENDPOINT"]
 
+# Get the current directory
+current_dir = os.path.dirname(__file__)
+
+# Construct the file path
+image_file_path = os.path.join(current_dir, 'resume.png')
+
+# Load the image
+st.image(image_file_path)
+
 # Title of the app
 # Center the title, header, image, and input form
 st.markdown("<h1 style='text-align: center;'>ResumAI</h1>", unsafe_allow_html=True)
