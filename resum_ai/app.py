@@ -6,9 +6,9 @@ from dotenv import load_dotenv
 
 # Load env vars
 load_dotenv()
-openai_api_key = os.environ["OPENAI_API_KEY"]
-astra_db_token = os.environ["ASTRA_DB_APPLICATION_TOKEN"]
-astra_endpoint = os.environ["ASTRA_DB_API_ENDPOINT"]
+openai_api_key = st.secrets["OPENAI_API_KEY"]
+astra_db_token = st.secrets["ASTRA_DB_APPLICATION_TOKEN"]
+astra_endpoint = st.secrets["ASTRA_DB_API_ENDPOINT"]
 
 # Title of the app
 # Center the title, header, image, and input form
