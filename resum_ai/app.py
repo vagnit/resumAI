@@ -74,7 +74,7 @@ if st.button("Submit"):
   st.write(f"Thank you for submitting the form 🙏") 
   
   with st.spinner('Loeading your results...'):
-    result = run_flow_from_json(flow="Resume Assistant.json",
+    result = run_flow_from_json(flow=langflow_json,
                 input_value=f"{desired_role}",
                 fallback_to_env_vars=True, # False by default
                 tweaks=TWEAKS)
