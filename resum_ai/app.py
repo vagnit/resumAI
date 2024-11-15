@@ -10,6 +10,29 @@ openai_api_key = st.secrets["OPENAI_API_KEY"]
 astra_db_token = st.secrets["ASTRA_DB_APPLICATION_TOKEN"]
 astra_endpoint = st.secrets["ASTRA_DB_API_ENDPOINT"]
 
+st.markdown(
+    """
+    <style>
+    .main {
+        background-color: #F7729C;
+    }
+    .title {
+        font-size: 3em;
+        color: #4CAF50;
+    }
+    .subtitle {
+        font-size: 1.5em;
+        color: #555555;
+    }
+    .subtext {
+        font-size: 1em;
+        color: #777777;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
 # Get the current directory
 current_dir = os.path.dirname(__file__)
 
@@ -22,6 +45,9 @@ langflow_json = os.path.join(current_dir, 'Resume Assistant.json')
 st.markdown("<h1 style='text-align: center;'>ResumAI</h1>", unsafe_allow_html=True)
 
 st.markdown("<h2 style='text-align: center;'>Optimize your job searching with ResumAI</h2>", unsafe_allow_html=True)
+
+st.markdown("<h6 style='text-align: center;'>Upload your resume and enter your desired role to get personalized job recommendations</h6>", unsafe_allow_html=True)
+
 
 st.image(resume_image, width=650, use_container_width='auto')
 
@@ -40,7 +66,6 @@ if uploaded_file is not None:
 TWEAKS = {
   "ParseData-EA01z": {},
   "Prompt-cwII3": {
-     # "job_role": "Data Scientist",
   },
   "ChatOutput-T2xaq": {},
   "OpenAIEmbeddings-AGnvK": {
@@ -56,7 +81,6 @@ TWEAKS = {
   "ParseData-Rt5pZ": {},
   "ChatInput-ZffxB": {
       "input_value": f"{desired_role}",
-      # "input_value": "Data Scientist",
   },
   "AstraDB-T7QLI": {
       "api_endpoint": f"{astra_endpoint}",
@@ -73,7 +97,7 @@ if st.button("Submit"):
   st.write(f"Your desired role is: {desired_role}") 
   st.write(f"Thank you for submitting the form 🙏") 
   
-  with st.spinner('Loeading your results...'):
+  with st.spinner('Loading your results...'):
     result = run_flow_from_json(flow=langflow_json,
                 input_value=f"{desired_role}",
                 fallback_to_env_vars=True, # False by default
