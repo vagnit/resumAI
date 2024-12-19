@@ -3,3 +3,4 @@ python-dotenv==1.0.1
 pandas
 datasets
 langflow==1.0.19
+streamlit
