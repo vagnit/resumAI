@@ -24,27 +24,27 @@ To build this app you will need the following prerequisites:
  - [OpenAI API Key](https://platform.openai.com/docs/quickstart#create-and-export-an-api-key)
  - [Astra DB Endpoint and Application Token](https://docs.datastax.com/en/astra-db-serverless/administration/manage-application-tokens.html#database-token) (which you can retrieve from your database dashboard)
 
-> #Astra  DB  API  Endpoint
-> ASTRA_DB_API_ENDPOINT=https://your_astra_db_api_endpoint
+>     # Astra  DB  API  Endpoint
+>     ASTRA_DB_API_ENDPOINT=https://your_astra_db_api_endpoint
 > 
-> #Astra  DB  Application  Token 
-> ASTRA_DB_APPLICATION_TOKEN=your_astra_db_application_token 
-> > 
-> #OpenAI API key  
-> OPENAI_API_KEY=your_openai_api_key
+>     # Astra  DB  Application  Token 
+>     ASTRA_DB_APPLICATION_TOKEN=your_astra_db_application_token
+> 
+>     # OpenAI API key  
+>     OPENAI_API_KEY=your_openai_api_key
 
 3.  Open up the repository in an editor (I personally use Visual Studio code) and [run a python virtual environment](https://code.visualstudio.com/docs/python/environments#_create-a-virtual-environment-in-the-terminal)
 
-> python3  -m  venv  .venv
-> source venv/bin/activate
+>     python3  -m  venv  .venv
+>     source venv/bin/activate
 
 4.  Install the dependencies using the requirements.txt file
 
-> pip  install  -r  requirements.txt
+>     pip  install  -r  requirements.txt
 
 5. Run the `load_job_listings.py` script.
 
-> python3  load_job_listings.py
+>     python3  load_job_listings.py
 
 This script will ingest a dataset of job listings into Astra DB. You will start to see job titles appear in your terminal -- that is how you know the script is successfully running. This file is fairly large so keep it running for as long as you'd want depending on how many records you want in your database. 
 
