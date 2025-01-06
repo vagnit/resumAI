@@ -56,7 +56,7 @@ desired_role = st.text_input("Desired Role:", key="desired_role", help="Enter th
 
 # file upload
 temp_file_path = None
-uploaded_file = st.file_uploader("Upload Resume", type=["pdf", "docx"])
+uploaded_file = st.file_uploader("Upload Resume", type=["pdf"])
 if uploaded_file is not None:
     with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as temp_file:
         temp_file.write(uploaded_file.getvalue())
