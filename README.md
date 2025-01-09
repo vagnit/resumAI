@@ -46,7 +46,7 @@ To build this app you will need the following prerequisites:
 
 >     python3  load_job_listings.py
 
-This script will ingest a dataset of job listings into Astra DB. You will start to see job titles appear in your terminal -- that is how you know the script is successfully running. This file is fairly large so keep it running for as long as you'd want depending on how many records you want in your database. 
+This script will ingest a [dataset of job listings ](https://huggingface.co/datasets/datastax/linkedin_job_listings?library=datasets) into Astra DB. You will start to see job titles appear in your terminal -- that is how you know the script is successfully running. This file is fairly large so keep it running for as long as you'd want depending on how many records you want in your database. 
 
 ## Start the app
 Finally run `streamlit run app.py` to start the app and there you have it! You can test the app by giving it a Desired Role and uploading a resume.
