@@ -52,3 +52,8 @@ This script will ingest a [dataset of job listings ](https://huggingface.co/data
 Finally run `streamlit run app.py` to start the app and there you have it! You can test the app by giving it a Desired Role and uploading a resume.
 
 Happy job searching! 
+
+-- 
+
+Resources:
+- Blogpost: [Building an AI Resume Assistant App with Langflow, Astra DB and OpenAI](https://www.datastax.com/blog/building-resumai-langflow-astra-db-openai?utm_medium=social_organic&utm_source=twitter&utm_campaign=blog&utm_content=)
