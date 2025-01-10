@@ -8,18 +8,21 @@ from datasets import load_dataset
 
 load_dotenv()
 
-dataset = load_dataset("datastax/linkedin_job_listings", split='train')
-job_listings = pd.DataFrame.from_dict(dataset)
+script_dir = os.path.dirname(__file__)  # Directory of the script
+csv_file_path = os.path.join(script_dir, 'postings.csv')
+
+job_listings = pd.read_csv(csv_file_path)
 job_listings = job_listings.replace([np.nan, np.inf, -np.inf], None)
 
 client = DataAPIClient(os.environ["ASTRA_DB_APPLICATION_TOKEN"])
 database = client.get_database(os.environ["ASTRA_DB_API_ENDPOINT"])
-if "listings" in database.list_collection_names():
-    collection = database.get_collection("listings")
-else:
-    collection = database.create_collection("listings")
+collection = database.get_collection("job_listings")
 
-# TODO: add more preprocessing steps to the content 
+
+# print headers
+# for listing in job_listings:
+#     print(listing)
+
 def truncate_content(content, max_bytes=8000):
     # Encode the string into bytes (UTF-8 encoding)
     content_bytes = content.encode('utf-8')
