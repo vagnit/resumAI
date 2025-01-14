@@ -1922,7 +1922,7 @@
                                 "placeholder": "",
                                 "show": true,
                                 "name": "collection_name",
-                                "value": "listings",
+                                "value": "job_listings",
                                 "display_name": "Collection Name",
                                 "advanced": false,
                                 "dynamic": false,
