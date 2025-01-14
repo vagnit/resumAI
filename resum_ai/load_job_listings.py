@@ -14,10 +14,10 @@ job_listings = job_listings.replace([np.nan, np.inf, -np.inf], None)
 
 client = DataAPIClient(os.environ["ASTRA_DB_APPLICATION_TOKEN"])
 database = client.get_database(os.environ["ASTRA_DB_API_ENDPOINT"])
-if "listings" in database.list_collection_names():
-    collection = database.get_collection("listings")
+if "job_listings" in database.list_collection_names():
+    collection = database.get_collection("job_listings")
 else:
-    collection = database.create_collection("listings")
+    collection = database.create_collection("job_listings")
 
 # TODO: add more preprocessing steps to the content 
 def truncate_content(content, max_bytes=8000):
