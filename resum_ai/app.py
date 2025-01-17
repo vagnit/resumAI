@@ -68,6 +68,9 @@ TWEAKS = {
   "Prompt-cwII3": {
   },
   "ChatOutput-T2xaq": {},
+  "OpenAIEmbeddings-AGnvK": {
+    "openai_api_key": f"{openai_api_key}",
+  },
   "OpenAIModel-GM3Ha": {
     "openai_api_key": f"{openai_api_key}",
   },
