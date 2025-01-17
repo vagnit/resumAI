@@ -38,7 +38,7 @@ current_dir = os.path.dirname(__file__)
 
 # Construct the file path 
 resume_image = os.path.join(current_dir, 'resume.png')
-langflow_json = os.path.join(current_dir, 'Resume Assistant.json')
+langflow_json = os.path.join(current_dir, 'ResumAI.json')
 
 # Title of the app
 # Center the title, header, image, and input form
@@ -68,9 +68,6 @@ TWEAKS = {
   "Prompt-cwII3": {
   },
   "ChatOutput-T2xaq": {},
-  "OpenAIEmbeddings-AGnvK": {
-    "openai_api_key": f"{openai_api_key}",
-  },
   "OpenAIModel-GM3Ha": {
     "openai_api_key": f"{openai_api_key}",
   },
@@ -85,6 +82,10 @@ TWEAKS = {
   "AstraDB-T7QLI": {
       "api_endpoint": f"{astra_endpoint}",
       "token": f"{astra_db_token}",
+       "collection_name": "job_listings",
+      "embedding_choice": "Astra Vectorize",
+      "embedding_provider": "OpenAI",
+      "model": "text-embedding-3-small",
   },
   "Prompt-qGHGy": {},
   "OpenAIModel-umK6j": {
