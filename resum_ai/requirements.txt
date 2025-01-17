@@ -2,5 +2,5 @@ astrapy==1.5.2
 python-dotenv==1.0.1
 pandas
 datasets
-langflow
+langflow==1.0.19
 streamlit

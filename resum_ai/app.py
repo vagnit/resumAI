@@ -38,7 +38,7 @@ current_dir = os.path.dirname(__file__)
 
 # Construct the file path 
 resume_image = os.path.join(current_dir, 'resume.png')
-langflow_json = os.path.join(current_dir, 'ResumAI.json')
+langflow_json = os.path.join(current_dir, 'Resume Assistant.json')
 
 # Title of the app
 # Center the title, header, image, and input form
